@@ -118,7 +118,8 @@ AI 会：
 根据联网搜索自动获取素材自动发贴
 ```
 
-<img width="752" alt="AiPyPro exe_20251025_180137" src="https://github.com/user-attachments/assets/b2362224-6626-468e-9ecf-e7e62f5a65dd" />
+<img width="963" alt="局部截取_20251025_180347" src="https://github.com/user-attachments/assets/445d9457-6081-48b8-8a07-39705a374a37" />
+
 
 
 ## ⚙️ 环境变量说明
@@ -265,6 +266,7 @@ MIT License
 **项目地址：** https://github.com/wszdb/FlarumPost-MCP
 
 **问题反馈：** 请在 GitHub 提交 Issue
+
 
 
 
