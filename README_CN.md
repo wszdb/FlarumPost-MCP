@@ -112,6 +112,15 @@ AI 会：
 - 生成 500 字左右的口语化内容
 - 自动发布
 
+### 最高级用法
+
+```
+根据联网搜索自动获取素材自动发贴
+```
+
+<img width="752" alt="AiPyPro exe_20251025_180137" src="https://github.com/user-attachments/assets/b2362224-6626-468e-9ecf-e7e62f5a65dd" />
+
+
 ## ⚙️ 环境变量说明
 
 | 变量名 | 必需 | 默认值 | 说明 |
@@ -238,82 +247,6 @@ AI 会：
 - ✅ **向后兼容**：完全兼容旧版 API Token 配置
 - ✅ **错误处理**：完善的异常处理和重试机制
 
-## 🔍 API 接口说明
-
-本项目使用以下 Flarum API 接口：
-
-### 1. 获取 Token
-```bash
-POST /api/token
-Content-Type: application/json
-
-{
-  "identification": "username",
-  "password": "password"
-}
-
-# 响应
-{
-  "token": "your_api_token_here"
-}
-```
-
-### 2. 获取标签列表
-```bash
-GET /api/tags
-Authorization: Token {your_token}
-```
-
-### 3. 创建讨论
-```bash
-POST /api/discussions
-Authorization: Token {your_token}
-Content-Type: application/json
-
-{
-  "data": {
-    "type": "discussions",
-    "attributes": {
-      "title": "帖子标题",
-      "content": "帖子内容"
-    },
-    "relationships": {
-      "tags": {
-        "data": [
-          {"type": "tags", "id": "1"},
-          {"type": "tags", "id": "2"}
-        ]
-      }
-    }
-  }
-}
-```
-
-## 📝 开发说明
-
-### 代码结构
-
-```python
-# 全局变量
-_api_token          # Token 缓存
-_available_tags     # 标签列表缓存
-
-# 核心函数
-get_api_token()           # 获取 API Token
-get_auth_headers()        # 构建认证 Headers
-fetch_available_tags()    # 获取标签列表
-
-# MCP 接口
-list_tools()              # 列出可用工具
-call_tool()               # 执行工具调用
-```
-
-### 扩展开发
-
-如需添加新功能，可以：
-1. 在 `list_tools()` 中添加新的工具定义
-2. 在 `call_tool()` 中添加对应的处理逻辑
-3. 使用 `get_auth_headers()` 获取认证信息
 
 ## 🤝 贡献
 
@@ -332,6 +265,7 @@ MIT License
 **项目地址：** https://github.com/wszdb/FlarumPost-MCP
 
 **问题反馈：** 请在 GitHub 提交 Issue
+
 
 
 
