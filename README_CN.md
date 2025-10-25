@@ -78,7 +78,7 @@ FLARUM_MIN_TAGS=2
 FLARUM_MAX_TAGS=2
 ```
 
-<img width="729" height="651" alt="局部截取_20251025_174838" src="https://github.com/user-attachments/assets/79b9a2f2-d7e8-4eff-886f-b3bddd89b1ce" />
+<img width="529"  alt="局部截取_20251025_174838" src="https://github.com/user-attachments/assets/79b9a2f2-d7e8-4eff-886f-b3bddd89b1ce" />
 
 
 ### 4️⃣ 重启客户端
@@ -332,6 +332,7 @@ MIT License
 **项目地址：** https://github.com/wszdb/FlarumPost-MCP
 
 **问题反馈：** 请在 GitHub 提交 Issue
+
 
 
 
