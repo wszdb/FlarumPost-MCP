@@ -42,7 +42,7 @@ pip install requests mcp
 
 Add the following to your MCP client configuration file:
 
-**Method 1: Username & Password (Recommended)**
+**Method 1: Claude Desktop Configuration**
 
 ```json
 {
@@ -55,42 +55,31 @@ Add the following to your MCP client configuration file:
         "FLARUM_USERNAME": "your_username",
         "FLARUM_PASSWORD": "your_password",
         "FLARUM_MIN_TAGS": "1",
-        "FLARUM_MAX_TAGS": "3"
+        "FLARUM_MAX_TAGS": "3",
+        "FLARUM_DEFAULT_TAGS": "general,discussion"
       }
     }
   }
 }
 ```
 
-**Method 2: API Token**
+**Method 2: AiPy Pro Configuration Example**
 
-```json
-{
-  "mcpServers": {
-    "Flarum": {
-      "command": "python",
-      "args": ["/path/to/FlarumPost-MCP/server.py"],
-      "env": {
-        "FLARUM_URL": "https://your-forum.com",
-        "FLARUM_API_TOKEN": "your_api_token_here"
-      }
-    }
-  }
-}
+```text
+1. Name: Flarum MCP
+2. Type: studio
+3. Command: python
+4. Arguments: E:\code\FlarumPost-MCP\server.py
+5. Environment Variables:
+FLARUM_URL=https://bbs.a.com
+FLARUM_USERNAME=admin
+FLARUM_PASSWORD=password
+FLARUM_MIN_TAGS=2
+FLARUM_MAX_TAGS=2
 ```
 
-**Method 3: Default Tags**
+<img width="529" alt="Configuration Screenshot" src="https://github.com/user-attachments/assets/79b9a2f2-d7e8-4eff-886f-b3bddd89b1ce" />
 
-```json
-{
-  "env": {
-    "FLARUM_URL": "https://your-forum.com",
-    "FLARUM_USERNAME": "admin",
-    "FLARUM_PASSWORD": "password123",
-    "FLARUM_DEFAULT_TAGS": "general,announcement"
-  }
-}
-```
 
 ### 4️⃣ Restart Client
 
@@ -122,6 +111,16 @@ AI will:
 - Match tags based on keywords like "weekend, travel" (e.g., travel, leisure)
 - Generate ~500 words of conversational content
 - Auto-publish
+
+### Expert Usage
+
+```
+Automatically fetch materials from web search and auto-post
+```
+
+<img width="963" alt="Auto-posting Screenshot" src="https://github.com/user-attachments/assets/445d9457-6081-48b8-8a07-39705a374a37" />
+
+
 
 ## ⚙️ Environment Variables
 
@@ -249,82 +248,6 @@ Use Default Tags   AI Views Tag List & Selects
 - ✅ **Backward Compatible**: Fully compatible with legacy API Token configuration
 - ✅ **Error Handling**: Comprehensive exception handling and retry mechanisms
 
-## 🔍 API Endpoints
-
-This project uses the following Flarum API endpoints:
-
-### 1. Get Token
-```bash
-POST /api/token
-Content-Type: application/json
-
-{
-  "identification": "username",
-  "password": "password"
-}
-
-# Response
-{
-  "token": "your_api_token_here"
-}
-```
-
-### 2. Get Tag List
-```bash
-GET /api/tags
-Authorization: Token {your_token}
-```
-
-### 3. Create Discussion
-```bash
-POST /api/discussions
-Authorization: Token {your_token}
-Content-Type: application/json
-
-{
-  "data": {
-    "type": "discussions",
-    "attributes": {
-      "title": "Post Title",
-      "content": "Post Content"
-    },
-    "relationships": {
-      "tags": {
-        "data": [
-          {"type": "tags", "id": "1"},
-          {"type": "tags", "id": "2"}
-        ]
-      }
-    }
-  }
-}
-```
-
-## 📝 Development
-
-### Code Structure
-
-```python
-# Global Variables
-_api_token          # Token cache
-_available_tags     # Tag list cache
-
-# Core Functions
-get_api_token()           # Get API Token
-get_auth_headers()        # Build auth headers
-fetch_available_tags()    # Fetch tag list
-
-# MCP Interface
-list_tools()              # List available tools
-call_tool()               # Execute tool call
-```
-
-### Extending
-
-To add new features:
-1. Add new tool definition in `list_tools()`
-2. Add corresponding logic in `call_tool()`
-3. Use `get_auth_headers()` for authentication
 
 ## 🤝 Contributing
 
