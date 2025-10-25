@@ -42,7 +42,7 @@ pip install requests mcp
 
 在您的 MCP 客户端配置文件中添加以下内容：
 
-**方式1：用户名密码（推荐）**
+**方式1：Claude Desktop 配置方法**
 
 ```json
 {
@@ -55,42 +55,28 @@ pip install requests mcp
         "FLARUM_USERNAME": "your_username",
         "FLARUM_PASSWORD": "your_password",
         "FLARUM_MIN_TAGS": "1",
-        "FLARUM_MAX_TAGS": "3"
+        "FLARUM_MAX_TAGS": "3",
+        "FLARUM_DEFAULT_TAGS": "shenghuo,xinqing"
       }
     }
   }
 }
 ```
 
-**方式2：API Token**
+**AiPy Pro配置示例**
+1、名称：Flarum MCP
+2、类型：studio
+3、命令：python
+4、参数：E:\code\FlarumPost-MCP\server.py
+5、环境变量：
+FLARUM_URL=https://bbs.a.com
+FLARUM_USERNAME=admin
+FLARUM_PASSWORD=password
+FLARUM_MIN_TAGS=2
+FLARUM_MAX_TAGS=2
 
-```json
-{
-  "mcpServers": {
-    "Flarum": {
-      "command": "python",
-      "args": ["/path/to/FlarumPost-MCP/server.py"],
-      "env": {
-        "FLARUM_URL": "https://your-forum.com",
-        "FLARUM_API_TOKEN": "your_api_token_here"
-      }
-    }
-  }
-}
-```
+<img width="729" height="651" alt="局部截取_20251025_174838" src="https://github.com/user-attachments/assets/79b9a2f2-d7e8-4eff-886f-b3bddd89b1ce" />
 
-**方式3：默认标签**
-
-```json
-{
-  "env": {
-    "FLARUM_URL": "https://your-forum.com",
-    "FLARUM_USERNAME": "admin",
-    "FLARUM_PASSWORD": "password123",
-    "FLARUM_DEFAULT_TAGS": "shenghuo,xinqing"
-  }
-}
-```
 
 ### 4️⃣ 重启客户端
 
@@ -343,3 +329,4 @@ MIT License
 **项目地址：** https://github.com/wszdb/FlarumPost-MCP
 
 **问题反馈：** 请在 GitHub 提交 Issue
+
