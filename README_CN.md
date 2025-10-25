@@ -63,7 +63,7 @@ pip install requests mcp
 }
 ```
 
-**AiPy Pro配置示例**
+**方式2：AiPy Pro配置示例**
 
 ```text
 1、名称：Flarum MCP
@@ -332,6 +332,7 @@ MIT License
 **项目地址：** https://github.com/wszdb/FlarumPost-MCP
 
 **问题反馈：** 请在 GitHub 提交 Issue
+
 
 
 
