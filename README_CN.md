@@ -64,7 +64,8 @@ pip install requests mcp
 ```
 
 **AiPy Pro配置示例**
-```json
+
+```text
 1、名称：Flarum MCP
 2、类型：studio
 3、命令：python
@@ -75,7 +76,6 @@ FLARUM_USERNAME=admin
 FLARUM_PASSWORD=password
 FLARUM_MIN_TAGS=2
 FLARUM_MAX_TAGS=2
-
 ```
 
 <img width="729" height="651" alt="局部截取_20251025_174838" src="https://github.com/user-attachments/assets/79b9a2f2-d7e8-4eff-886f-b3bddd89b1ce" />
@@ -332,5 +332,6 @@ MIT License
 **项目地址：** https://github.com/wszdb/FlarumPost-MCP
 
 **问题反馈：** 请在 GitHub 提交 Issue
+
 
 
